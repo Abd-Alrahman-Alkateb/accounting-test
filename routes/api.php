@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\CostController;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\AccountingController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,5 +18,4 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::apiResource('cost', CostController::class)->only(['index','store']);
-Route::apiResource('post', PostController::class)->only(['index','store']);
+Route::apiResource('account', AccountingController::class)->only(['index' , 'store','show','update','destroy']);
